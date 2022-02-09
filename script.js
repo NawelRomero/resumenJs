@@ -320,3 +320,121 @@ switch(operador){
 }
 
 
+////
+
+///CLASE 4
+
+// FUNCIONES   DRY(codigo unico y reutilizable), KISS (mantenerlo simple y funcional) y YAGNI(no hagas lo que no te piden)
+
+function saludar(){
+    console.log("Hola coders")
+}
+
+saludar() ///ejecuta la linea dentro de la funcion. en este caso linea 333 llama a la funcion pero se ejecuta la linea 330.
+saludar()
+saludar()
+saludar()
+
+//numeros como parametros, estos no se pueden definir en la funcion, el de los parametros importa.
+let numero1 = parseFloat(prompt("Ingrese un numero")) //50
+let numero2 = parseFloat(prompt("Ingrese otro numero"))//60
+
+function suma(numero1, numero2){
+    console.log(numero1 + numero2) //o return numero1 + numero2
+}
+
+let sumaNumeros = suma(5,10)
+sumaNumeros = suma(10,20)
+console.log(sumaNumeros)
+
+
+suma(5,10)
+suma(4,10)
+suma(50,10)
+///
+
+const IVA = 1.21
+
+function calcularIVA(producto){
+    //const IVA = 130 se va a calcular el const local dentro de la funcion
+    return producto * IVA
+}
+console.log(calcularIVA(100))
+
+//
+
+/*function suma(num1, num2){
+    return num1 + num2
+}
+
+function resta(num1, num2){
+    return num1 - num2
+}
+
+function multiplicacion(num1, num2){
+    return num1 * num2
+}
+
+function division(num1, num2){
+    return num1 / num2
+} */// esto pasada a funcion anonima quedaria asi(funcion anonima por si sola no tiene sentido implementarla)
+
+const suma = function(num1, num2) {return num1 + num2}
+const resta = function(num1, num2) {return num1 - num2}
+const multiplicacion = function(num1, num2) {return num1 * num2}
+const division = function(num1, num2) {return num1 / num2}
+
+console.log(suma(5,10)) // lo mismo para las demas con su respectiva funcion
+
+//funcion flecha, siempre con const para que no modifiquen el cod.
+
+const suma = (num1, num2) => num1 + num2
+const resta = (num1, num2) => num1 - num2
+const multiplicacion = (num1, num2) => num1 * num2
+const division = (num1, num2) => num1 / num2
+
+console.log(suma(5,10)) // lo mismo para las demas con su respectiva funcion, la funcion flecha simplifica el anonima.
+// s es de mas de una linea, quedaria const suma = (num1,num2) =>{
+                             //                  return num1 + num2
+                                         // }    lo cual no tendria sentido implementar funcion flecha.
+
+////calculadora
+
+
+function calculadora(numero1, numero2, operacion){
+   /* switch(operacion){
+        case "+":
+            console.log(suma(numero1, numero2))
+            break;
+        case "-":
+            console.log(resta(numero1, numero2))
+            break;
+        case "*":
+            console.log(multiplicacion(numero1,numero2))
+            break;
+        case "/":
+            console.log(division(numero1, numero2))
+            break;
+        case "default":
+            console.log("Operacion no valida")
+            break;
+    }*///la complejidad, y lo que cuesta para el procesador bajo. if cuesta menos en ejecuta que un switch.
+    
+    if(operacion == "+"){
+        console.log(suma(numero1, numero2))
+    } else if(operacion == "-"){
+        console.log(resta(numero1, numero2))
+    } else if (operacion == "*"){
+        console.log(multiplicacion(numero1,numero2))
+    } else if(operacion == "/"){
+        console.log(division(numero1, numero2))
+    } else {
+        console.log("operacion no valida")
+    }
+}
+
+let numero1 = parseFloat(prompt("Ingrese un numero"))
+let numero1 = parseFloat(prompt("Ingrese otro numero"))
+let operacion = prompt("ingrese una operacion")
+
+calculadora(numero1, numero2, operacion)
