@@ -434,7 +434,121 @@ function calculadora(numero1, numero2, operacion){
 }
 
 let numero1 = parseFloat(prompt("Ingrese un numero"))
-let numero1 = parseFloat(prompt("Ingrese otro numero"))
+let numero2 = parseFloat(prompt("Ingrese otro numero"))
 let operacion = prompt("ingrese una operacion")
 
 calculadora(numero1, numero2, operacion)
+
+
+////
+
+/////     CLASE 5----OBJETOS
+
+/* los objetos son estructuras que podemos definir para agrupar valores bajo un mismo criterio.
+Se componen de un listado de pares de clave-valr, es decir, contienen propiedades y valores agrupados.*/
+
+let persona1 = {
+    nombre: "Nahuel", 
+    apellido: "Romero", 
+    edad: 45,
+    esProfe: true
+}
+
+let persona2 = {
+    nombre: "milton",
+    apellido: "Salazar",
+    edad: 22,
+    cuentaBancaria: 1000,
+    esProfe: false
+}
+
+persona1.cuentaBancaria = 4000 ///modifica el valor, los valores de un objeto los puedo cambiar, lo que no puedo modificar la estructura de un obj, no puedo sacar ni agregar.
+/// con let yo puedo modificar la estructura de un objeto, con const puedo modificar solo los valores, por ende
+
+persona1 = persona2 ///con let seria posible clonar, con const no
+
+console.log(persona1)
+console.log(persona1.cuentaBancaria)
+console.log(persona2["cuentaBancaria"])
+
+///constructores, una forma de crear objetos, declaro una vez como va a estar definido mi objeto y creo objetos a travez de esa funcion
+
+function Persona(nombre, apellido, edad, dni){ //una funcion tiene parametros
+    this.nombre = nombre;  // estos son los atributos, this(mi) nombre, mi atributo nombre, va a ser igual al nombre que me ingresen como parametro
+    this.apellido = apellido;// de esta forma puedo crear objetos infinitos llamando a la funcion, y asi ahorrar codigo
+    this.edad = edad;
+    this.dni = dni;
+    this.saludar = () => console.log(`Hola, mi nombre es ${this.nombre}, estoy saludando`); ///el parentesis es "funcion"
+    this.mostrar = () => console.log(this)
+}
+
+const persona1 = new Persona("nahuel","romero", 21, 42626338)
+const persona2 = new Persona("juan", "romero", 23, 42422422)
+console.log(persona1)
+persona1.saludar() //primero llamo al objeto, luego a la funcion, se le conoce como metodo. Los metodos son funciones especiales
+//por ejemplo consola es un objeto, console.log es un metodo de consola
+//parseFloat() es una funcion, no tuve que llamar a nadie para ejecutarlo.
+persona2.saludar()
+
+//// CLASES, son una equivalencia al empleo de funcion constructora y permite definir distintos tipo de metodos.
+//crear objteos mediante clases
+
+class Persona {//mas limpio en la consola, y mas limpio el codigo, mas recomendado crear objetos constructores mediante clases.
+    constructor(nombre, apellido, edad, dni, cuentaBancaria){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+        this.dni = dni;
+        this.cuentaBancaria = cuentaBancaria
+    }
+
+    saludar(){
+        console.log(`Hola, mi nombre es ${this.nombre}, estoy saludando`)
+    }
+
+    mostrar(){
+        console.log(this)
+    }
+
+    deposito(cantDeposito){
+        this.cuentaBancaria += cantDeposito ////cantidad que tengo en cuentaBancaria, y suma num que agregue en cantDeposito
+    }
+
+    retiro(cantRetirar){
+        if(this.cuentaBancaria - cantRetirar >=0 ){
+            this.cuentaBancaria -= cantRetirar
+        } else {
+            console.log("No puede retirar mas dinero del que dispone")
+        }
+    }
+}
+
+const persona1 = new Persona("nahuel","romero", 21, 42626338, 300)
+const persona2 = new Persona("juan", "romero", 23, 42422422, 500)
+persona1.deposito(parseFloat(prompt("Ingrese un numero"))) ///no se puede agregar valores en los parametros, y lo mejor es consultar el prompt por fuera dle metodo.
+persona1.deposito(300)
+console.log(persona1.cuentaBancaria)
+/////////////
+const presona1 = new Persona( ///pidiendo los datos al usuario mediante prompts, en vez de llenarlo yo
+
+    prompt("Ingrese un nombre"),
+    prompt("Ingrese un apellido"),
+    parseInt(prompt("ingrese una edad")),
+    parseInt(prompt("Ingrese un DNI")),
+    parseFloat(prompt("Ingrese un saldo en cuenta bancaria"))
+)
+
+///en resumen,
+/*Los objetos tienen propiedades y metodos,
+el metodo constructor de un objeto sirve para crear el mismo y asignarle sus propiedades,
+permite crear varios objetos usando el mismo costructor,
+Las funciones de JS son generalmente de acceso global y los metodos son unicamente utilizados para ser invocados
+por los objetos que lo contienen,
+las clases son otra forma de crear objetos personalizados en JS */
+
+
+
+
+
+
+
