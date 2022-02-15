@@ -549,6 +549,108 @@ las clases son otra forma de crear objetos personalizados en JS */
 
 
 
+///// CLASE 6   ARRAYS
+
+
+
+//objeto en especifico ARRAYs
+// es un tipo de dato que sirve para almacenar valores en forma de lista. Basicamente es un objeto que me permite guardar determinar valores de manera ordenada.
+//tienen un indice que va desde el 0(elemento 1) indice 1(elemento 2) (el primer elemento del array)
+
+const array1 = []        ////con const para que no cambie su esctructura, que no mute(cuando hay arrays dinamicos se hacen con let, pq necesito cambiar su valor constantemente)
+
+let array2 = [true, 1, "hola, 4"]
+array2[1] = 999 /// va a cambiar el valor sea const o let, pero no puedo cambiar la estructura si hay const
+
+console.log(array2)
+/// para llamar elemento especifico del array
+console.log(array2[2])
+//
+for(let i = 0; i<4; i++) {
+    console.log(array[i]) //array[0]  array2[1]
+}
+
+//es mejor usar array.length para no tener que cambiar el indice siempre que se modifiquen los objetos en el array
+//metodo LENGTH se utiliza para definir el limite de una iteracion sobre un array, me permite saber explicitamente la longitud del mismo
+for(let i = 0; i<array2.length; i++){
+    console.log(array[i])
+}
+
+///para agregar un elemento a un array
+array2.push(10) ///metodo de objeto array
+
+//// pone el elemento al principio de mi array, por ende no es tan conveniente como push, pq modifica mi indice.
+array2.unshift(10)
+
+/// para sacar mi ultimo elemento
+array2.pop()
+
+///para eliminar el primero
+array2.shift()
+
+/// el metodo splice permite eliminar uno o varios elementos de un array en cualquier posicion. funciona con dos parametros, el primero es el indice donde se ubica el metodo para trabjar, el segundo es la cantidad de elementos a eliminar desde esa posicion.
+let nombres = ["francisco", "lucia", "luis", "carlos", "tutankamon"]
+
+let nombres1 = nombres.splice(1,3) /// (1,3) elimina desde indice 1, el 3 es al cantidad que elimina desde esa posicion
+console.log(nombres1) ///esto me retornaria los elementos eliminados
+console.log(nombres)////esto me retorna en mi array original sin los nombres eliminados.
+
+/// metodo JOIN paso todos los elementos a texto y agrego entre parentesis un separador entre cada elemntos
+console.log(nombres.join("*"))
+
+///metodo CONCAT concatene dos arrays, no string.
+let nombres2 = ["emily", "nadia"]
+let nombres3 = nombres1.concat(nombres2)
+console.log(nombres3)
+
+//// metodo SLICE devuelve una copia de una parte del array dentro de un nuevo array.
+let nombres3 = nombres1.slice(0,2) ////este si pide indice, y el fin no esta incluido
+
+
+////metodo INDEXOF, buscame cada uno de mis elementos, uno a uno, y devolveme el indice del elemento si lo encontras.
+//si no existe el elemento, me retorna -1
+
+let nombreAEliminar = prompt("ingrese un nombre")
+
+let indice = nombres1.findIndex(nombre => nombre === nombreAEliminar)
+
+if(indice !== -1){
+    nombres1.splice(indice, 1)
+    console.log(nombres1)
+}else {
+    alert("nombre invalido")
+}
+
+
+////metodo INCLUDES, similar a indexOF, me permite saber si un elemento existe dentro de un array o no
+console.log(nombres1.includes("nahuel"))
+
+///metodo REVERSE como su nombre lo indica, invierte el orden de los elementos dentro de un array
+console.log(nombres1.reverse)
+
+///// ARRAY DE OBJETOS
+
+class Persona{
+    constructor(nombre, apellido, edad){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+    }
+}
+
+const persona1 = new Persona("Francisco", "Pugh", 40)
+const persona2 = new Persona("Juan", "gomez", 14)
+const persona3 = new Persona("solomon", "nunes", 55)
+
+let personas = [persona1,persona2,persona3]
+
+console.log(personas)
+
+////recorrer arrays de objetos
+
+for(let personaEnArray of personas){  ////recomendable usar un nombre significativo, pero funciona con cualquier nombre
+    console.log(personaEnArray)
+}
 
 
 
