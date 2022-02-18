@@ -653,4 +653,75 @@ for(let personaEnArray of personas){  ////recomendable usar un nombre significat
 }
 
 
+///// CLASE 7   FUNCIONES DE ORDEN SUPERIORES
+//son unun tipo de funciones que no se como se implementan, pero las uso. ingresa info me devuelve info, pero no se como.
+
+/// ABSTRACCION, ocultar el como funciona , mostrar el resultado
+
+
+/// recibir funciones por parametro
+
+const persona1 = new Persona(prompt())
+
+
+/////metodos de busqueda y transformacion
+
+///metodo FOR each
+class Persona{
+    constructor(nombre, apellido, edad, sueldo){
+    this.nombre = nombre;
+    this.apellido = apellido
+    this.edad = edadthis.sueldo = sueldo
+    }
+}
+
+const persona1 = new Persona("emiliano", "grande", 23, 1000)
+const persona2 = new Persona("emilno", "grde", 24, 21000)
+const persona3 = new Persona("emilian", "grand", 22, 11000)
+
+let personas = [persona1, persona2, persona3]
+for(let persona of personas){
+    console.log(persona)
+}
+////en reemplazo al for of esta el for each
+
+personas.forEach((persona) =>{
+    console.log(persona)
+})
+
+/////METODO FIND, es para buscar el primer objeto dentro del array, si lo encuentra lo devuelve, si no devuelve undefined.
+console.log(personas.find((persona)=> persona.sueldo >= 8000  && persona.sueldo <= 3000))
+
+/// METODO FILTER, lo mismo que find, pero me devuelve todos los objetos que cumplan con la condicion
+console.log(personas.filter((persona)=>persona.edad < 18))
+
+///METODO SOME, me devuelve true o false si existe o no el elemento. podria implementarse para verificacion, usuario ya creado, contrase;a, etc.
+console.log(personas.some((persona) => persona.nombre === "pancho"))
+
+/// METODO MAP, cambio el array segun los datos que consulte. 
+console.log(personas.map((persona) => persona.sueldo))
+console.log(personas.map((persona) => persona.sueldo > 2000)) ////devuelve true o false dependiendo de si cumplen o no con lo que busco
+console.log(personas.map((persona) => `El sueldo es ${persona.sueldo}`))
+//(persona) => `${persona.nombre} - ${persona.sueldo}`)) para buscar mas de uno en especifico
+
+///REDUCE, a ver despues.
+
+/// METODO SORT, ordena nueystro codigo segun un criterio que definamos. se maneja con 1, -1, 0
+///
+console.log(personas.sort((p1,p2) => p1.sueldo - p2.sueldo)) // 
+
+///OBJETO MATH, es un objeto global que me provee las cuentas matematicas mas complejas.
+console.log(match.cbrt(8)) // la raiz cuadrada de 8
+
+console.log(parseInt(math.random() *100)) ////lo puedo usar para sorteo y demas, el que mas voy a usar. 
+
+//DATE, genera una fecha
+//constructor de la clase date
+const fecha = new Date("07, 03, 2022")
+console.log(fecha)
+///////
+
+
+
+
 
