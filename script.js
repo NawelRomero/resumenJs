@@ -1,13 +1,11 @@
 //comenraio una linea
 
-
 /*
 comentario multi-linea
 
 */
-
-//var nombre = "Francisco"
-/*var edad = 40
+var nombre = "Francisco"
+var edad = 40
 
 console.log(nombre)
 
@@ -21,8 +19,11 @@ console.log(nombre)
 
 edad = "francisco"
 
-console.log(edad)*/
-/*
+console.log(edad)
+
+
+
+
 const IVA = 1.21
 const IMPUESTOS_PAIS = 1.30
 const RETENCION_GANANCIAS = 1.35
@@ -40,7 +41,7 @@ let numero1= parseFloat(prompt("ingrese un numero"))
 let numero1= parseInt(prompt("ingrese un numero"))
 
 alert(numero1)
-alert(numero2) */
+alert(numero2) 
 
 
 
@@ -49,7 +50,7 @@ alert(numero2) */
 
 
 
-/*
+
 let numero = 2
 // si - condicion
 if(numero == 2) {
@@ -86,7 +87,7 @@ if(numero % 2){
 
 
 // condiciones anidadas if... else if
-/*
+
 let presupuesto = parseInt(prompt("Ingrese un presupuesto"))
 //> < >= <=
 if(presupuesto >= 0){
@@ -96,7 +97,7 @@ if(presupuesto >= 0){
 } else {
     console.log("Te fuiste del presupuesto")
 }
-*/
+
 
 let presupuesto = parseInt(prompt("Ingrese un presupuesto"))
 
@@ -724,4 +725,71 @@ console.log(fecha)
 
 
 
+//////CLASE 8  DOM
+
+///DOM ES una estructura de objetos generada por el navegador.
+///en el DOM, cada etiqueta html es un objeto, al que se llama NODOS
+
+let div = document.getElementById ("app");
+let parrafo = document.getElementById("parrafo1");
+let parrafos = document.getElementsByClassName('parrafos')///es mas quilombero, pq primero accedo al padre, y dsps al hijo
+let etiquetasP = document.getElementsByTagName('p')////me devuelve todas las etiquetas p
+console.log(div.innerHTML);
+console.log(parrafo.innerHTML);
+console.log(parrafo[0].children[0]) ///me devuelve mis elementos html hijos
+console.log(etiquetasP[0])
+
+
+////MODIFICAR NODOS//
+
+parrafo.innerText = 'Hola corders!'  //innerText inserte un texto igual a Hola corders, borra el codigo anterior, o lo concateno conu un +=
+
+////INNER HTML
+////una forma de definir el codigo html dentro de js, como si fuera una etiqueta html. genero nuevos nodos con contenido dentro de dichos nodos
+
+parrafos[0].innerHTML += '<p>Hola gente!!!<p>' /// con backsticks ``  puedo ponerle class o id. El css me toma la clase o el id incluso habiendolo hecho en js
+
+///AGREGAR O QUITAR NODOS. 
+///CREACION DE ELEMENTOS. para crear elementos html
+
+let divGeneral = document.createElement('div')
+divGeneral.innerHTML = `<p> bUEEEEENAS </p>`
+ document.body.appendChild(divGeneral) ///con esto cree un div dentro del codigo. Lo puedo usar para crear los distintos elementos dentro de un sitio web
+
+
+ ///BORRAR ELEMENTOS.
+document.body.removeChild(divGeneral)
+///cuando yo le doy click AGREGAR AL CARRITO, el objeto lo estoy agregando al carrito, un appendChild, y para removerlo, un removeChild.
+
+
+////PLANTILLAS LITERALES
+
+class Persona{
+    constructor(id, nombre, apellido, edad){
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+    }
+}
+
+c
+const persona1 = new Persona(1, 'milton', 'lolo', 23)
+const persona2 = new Persona(2, 'nahuel', 'juan', 21)
+const persona3 = new Persona(3, 'julio', 'dou', 23)
+
+let arrayPersonas = [persona1, persona2, persona3]
+
+let divPersonas = document.getElementById('divPersonas')
+
+arrayPersonas.forEach(personaEnArray => {
+    divPersonas.innerHTML += `
+    <div id="persona${personaEnArray.id}">
+        <h1>${personaEnArray.nombre} ${personaEnArray.apellido} </h1>
+        <p>Edad: ${personaEnArray.edad} </p>
+    </div>
+    `
+})
+
+//esto me va a devolver: persona0 persona1 persona2 persona3. UN QUILOMBO DE MOMENTO QUIERO SER chango
 
