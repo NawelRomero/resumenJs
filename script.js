@@ -793,3 +793,126 @@ arrayPersonas.forEach(personaEnArray => {
 
 //esto me va a devolver: persona0 persona1 persona2 persona3. UN QUILOMBO DE MOMENTO QUIERO SER chango
 
+
+
+
+
+
+////CLASE 9 EVENTOS
+
+///evento es definir tal comportamiento ante tal accion que el usuario realiza
+///ante una accion que realiza el usuario defino un comportamiento ante dicha accion
+///con eventos me olvido de prompt y alert
+///el evento como todo, es un bojeto, tiene propiedades y metodos.
+
+////opcion 1 para adherir evento
+
+let boton1 = document.getElementById('boton1')
+
+//lo botones tienen dos eventos, click y doble click
+
+boton1.addEventListener('click', () => {   ///usar referencias de eventos, mozilla events.
+    console.log('Diste click con addEvenListener')
+})
+
+//consulto un elemento del dom, a dicho elemento le ejecuto addEvenListener.
+////evento click, dblclick, change, input, submit, son los mas implementados en cualquier sitio web.
+
+
+
+////opcion 2, atravez de una propiedad
+boton1.onclick = () => console.log("diste click con onclick") ///usar el prefijo on antes del evento
+
+///addEvenListener es mas concreto al momento de ejecutarlo.
+
+////opcion 3, sintaxis. manejar el evento en el atributo de una etiquetaHTML.
+//usar este metodo no es mal reconmedable, es menos seguro, y muestra mi js al inspeccionar. 
+
+/////EVENTO INPUT
+///input es para agregar informacion, en html
+
+let input1 = document.getElementById('input1')
+input1.addEventListener('input', () =>{
+    console.log(input1.value)///en vez de contar las veces q agrego o quito algo, me muestra el valor de lo que pongo
+})
+///esto lo usa por ejmp el buscador de google. cada vez que agregue o quite informacion voy a estar ejecutando el evento input, en google por ejmp para resumir la busqueda del usuario
+///esto hace que no tenga que usar mas el prompt
+///<input type='color' id="inputColor">
+
+let inputColor = document.getElementById('inputColor')
+inputColor.addEventListener('input', () =>{
+    console.log(inputColor.value)
+}) ///lo que hago con esto, el usuario me ingresa valores atraves de una paleta de colores.
+
+
+////cambiar el fondo por ejmplo dependiendo del valor que ingrese el usuario
+inputColor.addEventListener('input', () =>{
+    document.body.style.backgroundColor = inputColor.value
+})
+
+/////EVENTO CHANGE
+//se dispara cuando se detecta un cambio en el elemento. cuando de enter o salga del elemento, cuandop haya un cambio dentro del elemento
+
+input1.addEventListener('change', () =>{
+    console.log(input1.value)
+})
+
+////EVENTO SUBMIT, es el vento que se activa cuando un formulario es enviado. 
+/*un <form id="form">
+        <input type="text" placeholder="nombre" id="idNombre">
+        <input type="text" placeholder="apellido" id="idApellido">
+        <input type="number" placeholder="edad" id="idEdad">
+        <button type="submit" >Crear Persona</button>
+    </form>
+en el html */
+
+class Persona{
+    constructor(nombre, apellido, edad){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+    }
+}
+let arrayPersonas = []
+
+let formPersona = document.getElementById('form')
+let botonPersonas = document.getElementById('botonPersonas')
+let divPersonas = Document.getElementById('divPersonas')
+
+formPersosa.addEventListener('submit', (e) =>{
+    e.preventDefault()    /////como no tengo servidor uso preventDefault para resetear el comportamiento del evento por default.
+    let nombre = document.getElementById('idNombre').value
+    let apellido = document.getElementById('idApellido').value
+    let edad = document.getElementById('idEdad').value
+    
+    const persona = new Persona(nombre, apellido, edad)
+    arrayPersonas.push(persona)
+    console.log(arrayPersonas)
+    formPersona.reset()
+})
+
+botonPersonas.addEventListener('dbclick', () => {
+    arrayPersonas.forEach((personaEnArray, indice) => {
+    divPersonas.innerHTML += `
+    <div class="card" id="persona${indice}" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Persona N°: ${indice + 1}</h5> ///se le pone al indice +1 pq asi se muestra en el html posicion 1 y no 0.
+                    <p class="card-text">Nombre: ${personaEnArray.nombre}</p>
+                    <p class="card-text">Apellido: ${personaEnArray.apellido}</p>
+                    <p class="card-text">Edad : ${personaEnArray.edad}</p>
+                    <button class="btn btn-dark">Eliminar Persona</button>
+                </div>
+            </div>
+        `
+    })
+})
+///cree una persona mediante un input form, sin prompt consultando al usuario
+///cree un objeto con los datos que me ingreso el usuario, y esos datos los guarde en un array.
+//la idea seria mostrar esos datos que ingresa el usuario, en el html, no consola. puedo usar bootstrap para el form, como ejmp
+
+
+
+
+
+
+
