@@ -879,7 +879,7 @@ let formPersona = document.getElementById('form')
 let botonPersonas = document.getElementById('botonPersonas')
 let divPersonas = Document.getElementById('divPersonas')
 
-formPersosa.addEventListener('submit', (e) =>{
+formPersona.addEventListener('submit', (e) =>{
     e.preventDefault()    /////como no tengo servidor uso preventDefault para resetear el comportamiento del evento por default.
     let nombre = document.getElementById('idNombre').value
     let apellido = document.getElementById('idApellido').value
@@ -897,7 +897,7 @@ botonPersonas.addEventListener('dbclick', () => {
     <div class="card" id="persona${indice}" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Persona N°: ${indice + 1}</h5> ///se le pone al indice +1 pq asi se muestra en el html posicion 1 y no 0.
-                    <p class="card-text">Nombre: ${personaEnArray.nombre}</p>
+                    <p class="card-text">Nombre: ${personaEnArray.nombre}</p>ca
                     <p class="card-text">Apellido: ${personaEnArray.apellido}</p>
                     <p class="card-text">Edad : ${personaEnArray.edad}</p>
                     <button class="btn btn-dark">Eliminar Persona</button>
@@ -912,7 +912,107 @@ botonPersonas.addEventListener('dbclick', () => {
 
 
 
+////CLASE 10 JSON Y STORAGE
+
+//
+
+////objeto Storage(api de almacenamiento web) permite almacenar datos de manera local en el navegador
+//localStrage se almacenan en el navegador de forma indefinida(me permite guardar informacion que se guardan en el navegador de manera local)
+
+///SessionStorage, voy a almacenar informacion mientras el usuario este en mi pagina.
+
+localStorage.setItem("SALUDO", "HOLA") ////inps elemento, aplicacion, localstorage,   clave-valor
+console.log(localStorage,getItem("saludo"))///en cambio de poner un valor que no existe, devuelve null.
+
+sessionStorage.setItem("saludo", "hola")
+console.log(sessionStorage.getItem("saludo")) ///se elimina cada vez que el usuario cierre la pesta;a pagina navegador etc.
+
+///no se puede recorrer con un for of pq no son objetos iterables, ni con for in pq obetenemos otras propiedades del objeto que no son valores almacenados.
+//solo se puede recorrer mediante un for
+
+localStorage.setItem("despedida", "adios")
+localStorage.setItem("uno", 1)
+
+for(let i = 0; i <localStorage.length; i++){
+    let clave = localStorage.key(i)   ///consulto por cada una de las claves almacenadas
+    console.log(localStorage.getItem(clave))///
+}
+
+///para eliminar datos del storage
+localStorage.removeItem("uno")
+
+localStorage.clear()////esto elimina todo los datos del localStorage
 
 
 
 
+//formato JSON (jsObjectNotation)
+///formato basado en texto, el cual me permite almacenar objetos, me permite convertir objetos a un formato de texto. es muy utilizado apra enviar y recibir informacion en la web.
+////me permite almacenar informacion en una base de datos.
+
+/////STRINGIFY, pasar un objeto a formato string.
+
+const objPersona = {nombre: "Francisco", apellido: "Pugh"}
+let personas = [objPersona]
+const personasArray = JSON.stringify(personas)
+localStorage.setItem("persona", personasArray)    // o tambien puedo hacer localStorage.setItem("persona", JSON.stringify(personas)) ///me ahorro la linea
+
+//los datos de los dos Storage no se puedne modificar de forma directa, si no que piso los valores
+
+class Persona{
+    constructor(persona, apellido, edad){
+        this.persona = persona;
+        this.apellido = apellido;
+        this.edad = edad
+    }
+}
+let personas
+
+if(localStorage.getItem("personas")){     ///aca digo, si existe mi localstore una clave con la palabra personas, la consulto.
+    personas = JSON.parse(localStorage.getItem("personas"))   ////como estan en formato jason hago el parseo, y tengo un array con datos de localStorage
+}else{
+    let personas = [] ////si en cambio no edxiste esa key localStorage, creo un array vacio y guardo
+    localStorage.setItem("Personas", JSON.stringify(personas))     ////ese array vacio en el localStorage
+}
+
+///hago formulario en html con inputs.
+
+let formulario = document.getElementById("formUser")    ///cree un formulario, lo consulte por el ID
+let boton = document.getElementById("botonUsers")
+let div = document.getElementById(divUsers)
+
+formulario.addEventListener("submit", (e) => {       ////a ese formulario le agregue un evento de tipo submit
+    e.preventDefault()
+    let nombre = document.getElementById("name").value            /////para consultar el valor de tres inputs
+    let apellido = document.getElementById("apellido").value
+    let edad = document.getElementById("edad").value
+
+    const persona = new Persona(nombre, apellido, edad)       ////con ese valor, esos tres inputs cree un nuevo objeto persona
+    personas.push(persona)   ///con ese nuevo objeto persona lo guarde en el array
+
+    localStorage.setItem("personas", JSON.stringify(personas))    ////y ese array lo guardo en el localStorage
+
+})
+
+////creo boton en html, para consultar los datos de localStorage
+
+boton,addEventListener("click", () => {
+    let arrayStorage = JSON.parse(localStorage.getItem("Personas"))
+    div.innerHTML = ""  ////Esto para que el codigo no se repitiera varias veces. 
+
+    arrayStorage.forEach( (personaEnArray, indice) =>{
+                    div.innerHTML +=`aca va el card de bootstrap`
+    })
+    console.log(arrayStorage) ////esto para ver mis datos en la card de bootstrap en el DOM.
+})
+
+/*
+explicacion: 
+Creo una variable personas, no le asigno ningun valor
+consulto en esta linea si existe una key con el valor personas, lo guardo en el array, las personas que habia guardadas en el localStorage las guardo en el array
+si en cambio no existe ese item personas, o es la primera que ingresa el usuario, o formateo, creo un array vacio y ese array vacio lo guardo en el localStorage, hago un peque;o condicional para consultar si los valores existen o no dentor del local storage.
+
+basicamente consulto el localStorage asi no se van reseteando los valores. 
+*/
+//consulto los valores que existian dentro de local storage, si existia ese key la guardo en un array cada uno de los valores, si no exisitia creo esa key ocn el array vacio.
+///creo el array vacio (personas = []) pq no estaba creado el array, no tengo ningun dato. 
