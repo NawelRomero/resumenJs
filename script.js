@@ -37,11 +37,11 @@ let numero2 = Number(prompt("Ingrese otro numero"))
 console.log(numero1 * numero2)
 console.log("fran" + "pugh")
 
-let numero1= parseFloat(prompt("ingrese un numero"))
-let numero1= parseInt(prompt("ingrese un numero"))
+let numero1 = parseFloat(prompt("ingrese un numero"))
+let numero1 = parseInt(prompt("ingrese un numero"))
 
 alert(numero1)
-alert(numero2) 
+alert(numero2)
 
 
 
@@ -53,25 +53,25 @@ alert(numero2)
 
 let numero = 2
 // si - condicion
-if(numero == 2) {
+if (numero == 2) {
     //codigo a ejecutar
     console.log("numero es igual a 2")
-} else{
+} else {
     console.log("Numero no es igual a 2")
 }
 
 /*Pero si let numero = 3 la condicion es falsa por ende el if no se ejecuta */
 
-if(NaN){
-    console.log("NaN")   /*es falso*/
+if (NaN) {
+    console.log("NaN") /*es falso*/
 }
 
 
-let numero = 2; 
+let numero = 2;
 let numero = parseInt(prompt("Ingrese un numero para saber si es par o impar"))
 
-if(numeron % 2 == 0) { // 5 / 2 = 2.5  5 % 2 = 1
- console.log("El numero es par")
+if (numeron % 2 == 0) { // 5 / 2 = 2.5  5 % 2 = 1
+    console.log("El numero es par")
 } else {
     console.log("El numero es impar")
 
@@ -79,7 +79,7 @@ if(numeron % 2 == 0) { // 5 / 2 = 2.5  5 % 2 = 1
 
 // un if medio loco
 
-if(numero % 2){
+if (numero % 2) {
     console.log("El numero es par")
 } else {
     console.log("El numero es impar")
@@ -90,9 +90,9 @@ if(numero % 2){
 
 let presupuesto = parseInt(prompt("Ingrese un presupuesto"))
 //> < >= <=
-if(presupuesto >= 0){
+if (presupuesto >= 0) {
     console.log("Presupuesto mayor a cero")
-} else if(presupuesto >= -1000) {
+} else if (presupuesto >= -1000) {
     console.log("Presupuesto aceptable")
 } else {
     console.log("Te fuiste del presupuesto")
@@ -101,12 +101,12 @@ if(presupuesto >= 0){
 
 let presupuesto = parseInt(prompt("Ingrese un presupuesto"))
 
-let noHayDeudas = (deudas >=0)
+let noHayDeudas = (deudas >= 0)
 let hayDeudasMenores = (deudas >= -1000)
 
-if(noHayDeudas){
+if (noHayDeudas) {
     console.log("no tengo deudas")
-} else if(hayDeudasMenores) {
+} else if (hayDeudasMenores) {
     console.log("deudas aceptables")
 } else {
     console.log("Te fuiste de deudas")
@@ -119,12 +119,12 @@ let numero2 = "5"
 
 // == Analizo valores != (distinto valor)
 // === (estrictamente igual) Analizo valores y tipos !== (estrictamente distintos valor y tipo)
-if(numero1 == numero2){
+if (numero1 == numero2) {
     console.log("V")
-} else{
+} else {
     console.log("F")
 } // == Es verdadero pero pq Js toma como que tienen el mismo valor, solo se diferencian en el tipo, string y nuero.
-  // === daria falso pq son distintos tipos.
+// === daria falso pq son distintos tipos.
 
 
 //
@@ -132,7 +132,7 @@ if(numero1 == numero2){
 let numero1 = 10
 let numero2 = 20
 
-if(numero1 == 10 && numero2 == 20){
+if (numero1 == 10 && numero2 == 20) {
     console.log("V")
 } else {
     console.log("F")
@@ -149,7 +149,7 @@ if(numero1 == 10 && numero2 == 20){
 
 //
 
-if(numero1 == 10  ||  numero2 == 20){
+if (numero1 == 10 || numero2 == 20) {
     console.log("V")
 } else {
     console.log("F")
@@ -178,10 +178,10 @@ if(numero1 == 10  ||  numero2 == 20){
 let numero = parseFloat(prompt("Ingrese un numero"))
 //isNan(numeroX) retorna verdadero si numeroX es NaN, retorna falso si no lo es. 
 
-if(!(isNaN(numeroX))){
-console.log("Numero es valido")
+if (!(isNaN(numeroX))) {
+    console.log("Numero es valido")
 } else {
-    console.log("Numeor no valido")  //usar la negacion para hacer el resultado mas logico para mi. 
+    console.log("Numeor no valido") //usar la negacion para hacer el resultado mas logico para mi. 
 }
 
 
@@ -190,13 +190,13 @@ console.log("Numero es valido")
 
 let nota = parseInt(prompt("Ingrese una nota"))
 
-if(nota >= 1 && nota <=5){
+if (nota >= 1 && nota <= 5) {
     console.log("Estas desaprobado")
-} else if(nota === 6 || nota === 7 ){
+} else if (nota === 6 || nota === 7) {
     console.log("Estas aprobado con nota de bien")
-} else if(nota === 8 || nota === 9 ){
+} else if (nota === 8 || nota === 9) {
     console.log("Estas aprobado con nota de muy bien")
-} else if(nota === 10){
+} else if (nota === 10) {
     console.log("Edtas aprobado con nota Excelente")
 } else {
     console.log("Nota no valida")
@@ -209,26 +209,26 @@ if(nota >= 1 && nota <=5){
 
 
 
-for(let i=1; 1<=10; i++){ //i = i + 1
-   console.log(i)
+for (let i = 1; 1 <= 10; i++) { //i = i + 1
+    console.log(i)
 }
 // 
 
 
-for(let i=1; 1<=10; i++){ //i = i + 1
-   if(i == 5) {
-    console.log("i es igual a 5")
-    break
-    
-   }
-   console.log(i)
+for (let i = 1; 1 <= 10; i++) { //i = i + 1
+    if (i == 5) {
+        console.log("i es igual a 5")
+        break
+
+    }
+    console.log(i)
 }
 
 //
 
-for(let i=1; 1<=10; i++){ //i = i + 1
+for (let i = 1; 1 <= 10; i++) { //i = i + 1
 
-    if(i % 2 == 0) {
+    if (i % 2 == 0) {
         continue
     }
     console.log(i)
@@ -237,15 +237,15 @@ for(let i=1; 1<=10; i++){ //i = i + 1
 
 //while   crear ciclo con un condicional. si la sentencia sea verdadera, el ciclo es infinito\
 
-let repetir = true 
+let repetir = true
 let acumulador = 0
 let contador = 0
-while(repetir) { //repetir == true
+while (repetir) { //repetir == true
     let nota = parseInt(prompt("ingrese una nota"))
     acumulador += nota //acumulador = acumulador + nota
     contador++
     let confirma = prompt("Desea ingresar otra nota mas").toLowerCase()
-    if(confirma == "no"){
+    if (confirma == "no") {
         repetir = false //parecido a break
     }
 }
@@ -260,12 +260,12 @@ let acumulador = 0
 let contador = 0
 let confirma
 
-do{
+do {
     let nota = parseInt(prompt("ingrese una nota"))
     acumulador += nota
     contador++
     confirma = prompt("Desea ingresar otra nota mas").toLowerCase()
-}while(confirma != "no")
+} while (confirma != "no")
 
 console.log(`El promedio de las notas es ${acumulador / contador}`)
 
@@ -275,14 +275,14 @@ let numero1
 let numero2
 let operador
 
-do{
+do {
     numero1 = parseFloat(prompt("ingrese un numero"))
     numero2 = parseFloat(prompt("ingrese otro numero"))
     operador = prompt("ingrese una operacion (+,-,/,*)")
-    if(isNaN(numero1) || isNaN(numero2)){
+    if (isNaN(numero1) || isNaN(numero2)) {
         alert("Por favor ingrese un numero valido")
     }
-}while(isNaN(numero1) || isNaN(numero2))
+} while (isNaN(numero1) || isNaN(numero2))
 
 console.log(numero1 + numero2)
 
@@ -293,31 +293,31 @@ let numero1
 let numero2
 let operador
 
-do{
+do {
     numero1 = parseFloat(prompt("ingrese un numero"))
     numero2 = parseFloat(prompt("ingrese otro numero"))
     operador = prompt("ingrese una operacion (+,-,/,*)")
-    if(isNaN(numero1) || isNaN(numero2)){
+    if (isNaN(numero1) || isNaN(numero2)) {
         alert("Por favor ingrese un numero valido")
     }
-}while(isNaN(numero1) || isNaN(numero2))
+} while (isNaN(numero1) || isNaN(numero2))
 
-switch(operador){
-    case "+": 
-             alert(numero1 + numero2)
-             break
+switch (operador) {
+    case "+":
+        alert(numero1 + numero2)
+        break
     case "-":
-             alert(numero1 - numero2)
-             break
+        alert(numero1 - numero2)
+        break
     case "/":
-             alert(numero1 / numero2)
-             break
+        alert(numero1 / numero2)
+        break
     case "*":
-             alert(numero1 * numero2)
-             break         
+        alert(numero1 * numero2)
+        break
     default:
-             alert("Operacion no valida")
-             break
+        alert("Operacion no valida")
+        break
 }
 
 
@@ -327,7 +327,7 @@ switch(operador){
 
 // FUNCIONES   DRY(codigo unico y reutilizable), KISS (mantenerlo simple y funcional) y YAGNI(no hagas lo que no te piden)
 
-function saludar(){
+function saludar() {
     console.log("Hola coders")
 }
 
@@ -338,25 +338,25 @@ saludar()
 
 //numeros como parametros, estos no se pueden definir en la funcion, el de los parametros importa.
 let numero1 = parseFloat(prompt("Ingrese un numero")) //50
-let numero2 = parseFloat(prompt("Ingrese otro numero"))//60
+let numero2 = parseFloat(prompt("Ingrese otro numero")) //60
 
-function suma(numero1, numero2){
+function suma(numero1, numero2) {
     console.log(numero1 + numero2) //o return numero1 + numero2
 }
 
-let sumaNumeros = suma(5,10)
-sumaNumeros = suma(10,20)
+let sumaNumeros = suma(5, 10)
+sumaNumeros = suma(10, 20)
 console.log(sumaNumeros)
 
 
-suma(5,10)
-suma(4,10)
-suma(50,10)
+suma(5, 10)
+suma(4, 10)
+suma(50, 10)
 ///
 
 const IVA = 1.21
 
-function calcularIVA(producto){
+function calcularIVA(producto) {
     //const IVA = 130 se va a calcular el const local dentro de la funcion
     return producto * IVA
 }
@@ -378,14 +378,22 @@ function multiplicacion(num1, num2){
 
 function division(num1, num2){
     return num1 / num2
-} */// esto pasada a funcion anonima quedaria asi(funcion anonima por si sola no tiene sentido implementarla)
+} */ // esto pasada a funcion anonima quedaria asi(funcion anonima por si sola no tiene sentido implementarla)
 
-const suma = function(num1, num2) {return num1 + num2}
-const resta = function(num1, num2) {return num1 - num2}
-const multiplicacion = function(num1, num2) {return num1 * num2}
-const division = function(num1, num2) {return num1 / num2}
+const suma = function (num1, num2) {
+    return num1 + num2
+}
+const resta = function (num1, num2) {
+    return num1 - num2
+}
+const multiplicacion = function (num1, num2) {
+    return num1 * num2
+}
+const division = function (num1, num2) {
+    return num1 / num2
+}
 
-console.log(suma(5,10)) // lo mismo para las demas con su respectiva funcion
+console.log(suma(5, 10)) // lo mismo para las demas con su respectiva funcion
 
 //funcion flecha, siempre con const para que no modifiquen el cod.
 
@@ -394,40 +402,40 @@ const resta = (num1, num2) => num1 - num2
 const multiplicacion = (num1, num2) => num1 * num2
 const division = (num1, num2) => num1 / num2
 
-console.log(suma(5,10)) // lo mismo para las demas con su respectiva funcion, la funcion flecha simplifica el anonima.
+console.log(suma(5, 10)) // lo mismo para las demas con su respectiva funcion, la funcion flecha simplifica el anonima.
 // s es de mas de una linea, quedaria const suma = (num1,num2) =>{
-                             //                  return num1 + num2
-                                         // }    lo cual no tendria sentido implementar funcion flecha.
+//                  return num1 + num2
+// }    lo cual no tendria sentido implementar funcion flecha.
 
 ////calculadora
 
 
-function calculadora(numero1, numero2, operacion){
-   /* switch(operacion){
-        case "+":
-            console.log(suma(numero1, numero2))
-            break;
-        case "-":
-            console.log(resta(numero1, numero2))
-            break;
-        case "*":
-            console.log(multiplicacion(numero1,numero2))
-            break;
-        case "/":
-            console.log(division(numero1, numero2))
-            break;
-        case "default":
-            console.log("Operacion no valida")
-            break;
-    }*///la complejidad, y lo que cuesta para el procesador bajo. if cuesta menos en ejecuta que un switch.
-    
-    if(operacion == "+"){
+function calculadora(numero1, numero2, operacion) {
+    /* switch(operacion){
+         case "+":
+             console.log(suma(numero1, numero2))
+             break;
+         case "-":
+             console.log(resta(numero1, numero2))
+             break;
+         case "*":
+             console.log(multiplicacion(numero1,numero2))
+             break;
+         case "/":
+             console.log(division(numero1, numero2))
+             break;
+         case "default":
+             console.log("Operacion no valida")
+             break;
+     }*/ //la complejidad, y lo que cuesta para el procesador bajo. if cuesta menos en ejecuta que un switch.
+
+    if (operacion == "+") {
         console.log(suma(numero1, numero2))
-    } else if(operacion == "-"){
+    } else if (operacion == "-") {
         console.log(resta(numero1, numero2))
-    } else if (operacion == "*"){
-        console.log(multiplicacion(numero1,numero2))
-    } else if(operacion == "/"){
+    } else if (operacion == "*") {
+        console.log(multiplicacion(numero1, numero2))
+    } else if (operacion == "/") {
         console.log(division(numero1, numero2))
     } else {
         console.log("operacion no valida")
@@ -449,8 +457,8 @@ calculadora(numero1, numero2, operacion)
 Se componen de un listado de pares de clave-valr, es decir, contienen propiedades y valores agrupados.*/
 
 let persona1 = {
-    nombre: "Nahuel", 
-    apellido: "Romero", 
+    nombre: "Nahuel",
+    apellido: "Romero",
     edad: 45,
     esProfe: true
 }
@@ -474,16 +482,16 @@ console.log(persona2["cuentaBancaria"])
 
 ///constructores, una forma de crear objetos, declaro una vez como va a estar definido mi objeto y creo objetos a travez de esa funcion
 
-function Persona(nombre, apellido, edad, dni){ //una funcion tiene parametros
-    this.nombre = nombre;  // estos son los atributos, this(mi) nombre, mi atributo nombre, va a ser igual al nombre que me ingresen como parametro
-    this.apellido = apellido;// de esta forma puedo crear objetos infinitos llamando a la funcion, y asi ahorrar codigo
+function Persona(nombre, apellido, edad, dni) { //una funcion tiene parametros
+    this.nombre = nombre; // estos son los atributos, this(mi) nombre, mi atributo nombre, va a ser igual al nombre que me ingresen como parametro
+    this.apellido = apellido; // de esta forma puedo crear objetos infinitos llamando a la funcion, y asi ahorrar codigo
     this.edad = edad;
     this.dni = dni;
     this.saludar = () => console.log(`Hola, mi nombre es ${this.nombre}, estoy saludando`); ///el parentesis es "funcion"
     this.mostrar = () => console.log(this)
 }
 
-const persona1 = new Persona("nahuel","romero", 21, 42626338)
+const persona1 = new Persona("nahuel", "romero", 21, 42626338)
 const persona2 = new Persona("juan", "romero", 23, 42422422)
 console.log(persona1)
 persona1.saludar() //primero llamo al objeto, luego a la funcion, se le conoce como metodo. Los metodos son funciones especiales
@@ -494,8 +502,8 @@ persona2.saludar()
 //// CLASES, son una equivalencia al empleo de funcion constructora y permite definir distintos tipo de metodos.
 //crear objteos mediante clases
 
-class Persona {//mas limpio en la consola, y mas limpio el codigo, mas recomendado crear objetos constructores mediante clases.
-    constructor(nombre, apellido, edad, dni, cuentaBancaria){
+class Persona { //mas limpio en la consola, y mas limpio el codigo, mas recomendado crear objetos constructores mediante clases.
+    constructor(nombre, apellido, edad, dni, cuentaBancaria) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
@@ -503,20 +511,20 @@ class Persona {//mas limpio en la consola, y mas limpio el codigo, mas recomenda
         this.cuentaBancaria = cuentaBancaria
     }
 
-    saludar(){
+    saludar() {
         console.log(`Hola, mi nombre es ${this.nombre}, estoy saludando`)
     }
 
-    mostrar(){
+    mostrar() {
         console.log(this)
     }
 
-    deposito(cantDeposito){
+    deposito(cantDeposito) {
         this.cuentaBancaria += cantDeposito ////cantidad que tengo en cuentaBancaria, y suma num que agregue en cantDeposito
     }
 
-    retiro(cantRetirar){
-        if(this.cuentaBancaria - cantRetirar >=0 ){
+    retiro(cantRetirar) {
+        if (this.cuentaBancaria - cantRetirar >= 0) {
             this.cuentaBancaria -= cantRetirar
         } else {
             console.log("No puede retirar mas dinero del que dispone")
@@ -524,7 +532,7 @@ class Persona {//mas limpio en la consola, y mas limpio el codigo, mas recomenda
     }
 }
 
-const persona1 = new Persona("nahuel","romero", 21, 42626338, 300)
+const persona1 = new Persona("nahuel", "romero", 21, 42626338, 300)
 const persona2 = new Persona("juan", "romero", 23, 42422422, 500)
 persona1.deposito(parseFloat(prompt("Ingrese un numero"))) ///no se puede agregar valores en los parametros, y lo mejor es consultar el prompt por fuera dle metodo.
 persona1.deposito(300)
@@ -558,7 +566,7 @@ las clases son otra forma de crear objetos personalizados en JS */
 // es un tipo de dato que sirve para almacenar valores en forma de lista. Basicamente es un objeto que me permite guardar determinar valores de manera ordenada.
 //tienen un indice que va desde el 0(elemento 1) indice 1(elemento 2) (el primer elemento del array)
 
-const array1 = []        ////con const para que no cambie su esctructura, que no mute(cuando hay arrays dinamicos se hacen con let, pq necesito cambiar su valor constantemente)
+const array1 = [] ////con const para que no cambie su esctructura, que no mute(cuando hay arrays dinamicos se hacen con let, pq necesito cambiar su valor constantemente)
 
 let array2 = [true, 1, "hola, 4"]
 array2[1] = 999 /// va a cambiar el valor sea const o let, pero no puedo cambiar la estructura si hay const
@@ -567,13 +575,13 @@ console.log(array2)
 /// para llamar elemento especifico del array
 console.log(array2[2])
 //
-for(let i = 0; i<4; i++) {
+for (let i = 0; i < 4; i++) {
     console.log(array[i]) //array[0]  array2[1]
 }
 
 //es mejor usar array.length para no tener que cambiar el indice siempre que se modifiquen los objetos en el array
 //metodo LENGTH se utiliza para definir el limite de una iteracion sobre un array, me permite saber explicitamente la longitud del mismo
-for(let i = 0; i<array2.length; i++){
+for (let i = 0; i < array2.length; i++) {
     console.log(array[i])
 }
 
@@ -592,9 +600,9 @@ array2.shift()
 /// el metodo splice permite eliminar uno o varios elementos de un array en cualquier posicion. funciona con dos parametros, el primero es el indice donde se ubica el metodo para trabjar, el segundo es la cantidad de elementos a eliminar desde esa posicion.
 let nombres = ["francisco", "lucia", "luis", "carlos", "tutankamon"]
 
-let nombres1 = nombres.splice(1,3) /// (1,3) elimina desde indice 1, el 3 es al cantidad que elimina desde esa posicion
+let nombres1 = nombres.splice(1, 3) /// (1,3) elimina desde indice 1, el 3 es al cantidad que elimina desde esa posicion
 console.log(nombres1) ///esto me retornaria los elementos eliminados
-console.log(nombres)////esto me retorna en mi array original sin los nombres eliminados.
+console.log(nombres) ////esto me retorna en mi array original sin los nombres eliminados.
 
 /// metodo JOIN paso todos los elementos a texto y agrego entre parentesis un separador entre cada elemntos
 console.log(nombres.join("*"))
@@ -605,7 +613,7 @@ let nombres3 = nombres1.concat(nombres2)
 console.log(nombres3)
 
 //// metodo SLICE devuelve una copia de una parte del array dentro de un nuevo array.
-let nombres3 = nombres1.slice(0,2) ////este si pide indice, y el fin no esta incluido
+let nombres3 = nombres1.slice(0, 2) ////este si pide indice, y el fin no esta incluido
 
 
 ////metodo INDEXOF, buscame cada uno de mis elementos, uno a uno, y devolveme el indice del elemento si lo encontras.
@@ -615,10 +623,10 @@ let nombreAEliminar = prompt("ingrese un nombre")
 
 let indice = nombres1.findIndex(nombre => nombre === nombreAEliminar)
 
-if(indice !== -1){
+if (indice !== -1) {
     nombres1.splice(indice, 1)
     console.log(nombres1)
-}else {
+} else {
     alert("nombre invalido")
 }
 
@@ -631,8 +639,8 @@ console.log(nombres1.reverse)
 
 ///// ARRAY DE OBJETOS
 
-class Persona{
-    constructor(nombre, apellido, edad){
+class Persona {
+    constructor(nombre, apellido, edad) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
@@ -643,13 +651,13 @@ const persona1 = new Persona("Francisco", "Pugh", 40)
 const persona2 = new Persona("Juan", "gomez", 14)
 const persona3 = new Persona("solomon", "nunes", 55)
 
-let personas = [persona1,persona2,persona3]
+let personas = [persona1, persona2, persona3]
 
 console.log(personas)
 
 ////recorrer arrays de objetos
 
-for(let personaEnArray of personas){  ////recomendable usar un nombre significativo, pero funciona con cualquier nombre
+for (let personaEnArray of personas) { ////recomendable usar un nombre significativo, pero funciona con cualquier nombre
     console.log(personaEnArray)
 }
 
@@ -668,11 +676,11 @@ const persona1 = new Persona(prompt())
 /////metodos de busqueda y transformacion
 
 ///metodo FOR each
-class Persona{
-    constructor(nombre, apellido, edad, sueldo){
-    this.nombre = nombre;
-    this.apellido = apellido
-    this.edad = edadthis.sueldo = sueldo
+class Persona {
+    constructor(nombre, apellido, edad, sueldo) {
+        this.nombre = nombre;
+        this.apellido = apellido
+        this.edad = edadthis.sueldo = sueldo
     }
 }
 
@@ -681,20 +689,20 @@ const persona2 = new Persona("emilno", "grde", 24, 21000)
 const persona3 = new Persona("emilian", "grand", 22, 11000)
 
 let personas = [persona1, persona2, persona3]
-for(let persona of personas){
+for (let persona of personas) {
     console.log(persona)
 }
 ////en reemplazo al for of esta el for each
 
-personas.forEach((persona) =>{
+personas.forEach((persona) => {
     console.log(persona)
 })
 
 /////METODO FIND, es para buscar el primer objeto dentro del array, si lo encuentra lo devuelve, si no devuelve undefined.
-console.log(personas.find((persona)=> persona.sueldo >= 8000  && persona.sueldo <= 3000))
+console.log(personas.find((persona) => persona.sueldo >= 8000 && persona.sueldo <= 3000))
 
 /// METODO FILTER, lo mismo que find, pero me devuelve todos los objetos que cumplan con la condicion
-console.log(personas.filter((persona)=>persona.edad < 18))
+console.log(personas.filter((persona) => persona.edad < 18))
 
 ///METODO SOME, me devuelve true o false si existe o no el elemento. podria implementarse para verificacion, usuario ya creado, contrase;a, etc.
 console.log(personas.some((persona) => persona.nombre === "pancho"))
@@ -709,12 +717,12 @@ console.log(personas.map((persona) => `El sueldo es ${persona.sueldo}`))
 
 /// METODO SORT, ordena nueystro codigo segun un criterio que definamos. se maneja con 1, -1, 0
 ///
-console.log(personas.sort((p1,p2) => p1.sueldo - p2.sueldo)) // 
+console.log(personas.sort((p1, p2) => p1.sueldo - p2.sueldo)) // 
 
 ///OBJETO MATH, es un objeto global que me provee las cuentas matematicas mas complejas.
 console.log(match.cbrt(8)) // la raiz cuadrada de 8
 
-console.log(parseInt(math.random() *100)) ////lo puedo usar para sorteo y demas, el que mas voy a usar. 
+console.log(parseInt(math.random() * 100)) ////lo puedo usar para sorteo y demas, el que mas voy a usar. 
 
 //DATE, genera una fecha
 //constructor de la clase date
@@ -730,10 +738,10 @@ console.log(fecha)
 ///DOM ES una estructura de objetos generada por el navegador.
 ///en el DOM, cada etiqueta html es un objeto, al que se llama NODOS
 
-let div = document.getElementById ("app");
+let div = document.getElementById("app");
 let parrafo = document.getElementById("parrafo1");
-let parrafos = document.getElementsByClassName('parrafos')///es mas quilombero, pq primero accedo al padre, y dsps al hijo
-let etiquetasP = document.getElementsByTagName('p')////me devuelve todas las etiquetas p
+let parrafos = document.getElementsByClassName('parrafos') ///es mas quilombero, pq primero accedo al padre, y dsps al hijo
+let etiquetasP = document.getElementsByTagName('p') ////me devuelve todas las etiquetas p
 console.log(div.innerHTML);
 console.log(parrafo.innerHTML);
 console.log(parrafo[0].children[0]) ///me devuelve mis elementos html hijos
@@ -742,7 +750,7 @@ console.log(etiquetasP[0])
 
 ////MODIFICAR NODOS//
 
-parrafo.innerText = 'Hola corders!'  //innerText inserte un texto igual a Hola corders, borra el codigo anterior, o lo concateno conu un +=
+parrafo.innerText = 'Hola corders!' //innerText inserte un texto igual a Hola corders, borra el codigo anterior, o lo concateno conu un +=
 
 ////INNER HTML
 ////una forma de definir el codigo html dentro de js, como si fuera una etiqueta html. genero nuevos nodos con contenido dentro de dichos nodos
@@ -754,18 +762,18 @@ parrafos[0].innerHTML += '<p>Hola gente!!!<p>' /// con backsticks ``  puedo pone
 
 let divGeneral = document.createElement('div')
 divGeneral.innerHTML = `<p> bUEEEEENAS </p>`
- document.body.appendChild(divGeneral) ///con esto cree un div dentro del codigo. Lo puedo usar para crear los distintos elementos dentro de un sitio web
+document.body.appendChild(divGeneral) ///con esto cree un div dentro del codigo. Lo puedo usar para crear los distintos elementos dentro de un sitio web
 
 
- ///BORRAR ELEMENTOS.
+///BORRAR ELEMENTOS.
 document.body.removeChild(divGeneral)
 ///cuando yo le doy click AGREGAR AL CARRITO, el objeto lo estoy agregando al carrito, un appendChild, y para removerlo, un removeChild.
 
 
 ////PLANTILLAS LITERALES
 
-class Persona{
-    constructor(id, nombre, apellido, edad){
+class Persona {
+    constructor(id, nombre, apellido, edad) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -811,7 +819,7 @@ let boton1 = document.getElementById('boton1')
 
 //lo botones tienen dos eventos, click y doble click
 
-boton1.addEventListener('click', () => {   ///usar referencias de eventos, mozilla events.
+boton1.addEventListener('click', () => { ///usar referencias de eventos, mozilla events.
     console.log('Diste click con addEvenListener')
 })
 
@@ -832,28 +840,28 @@ boton1.onclick = () => console.log("diste click con onclick") ///usar el prefijo
 ///input es para agregar informacion, en html
 
 let input1 = document.getElementById('input1')
-input1.addEventListener('input', () =>{
-    console.log(input1.value)///en vez de contar las veces q agrego o quito algo, me muestra el valor de lo que pongo
+input1.addEventListener('input', () => {
+    console.log(input1.value) ///en vez de contar las veces q agrego o quito algo, me muestra el valor de lo que pongo
 })
 ///esto lo usa por ejmp el buscador de google. cada vez que agregue o quite informacion voy a estar ejecutando el evento input, en google por ejmp para resumir la busqueda del usuario
 ///esto hace que no tenga que usar mas el prompt
 ///<input type='color' id="inputColor">
 
 let inputColor = document.getElementById('inputColor')
-inputColor.addEventListener('input', () =>{
+inputColor.addEventListener('input', () => {
     console.log(inputColor.value)
 }) ///lo que hago con esto, el usuario me ingresa valores atraves de una paleta de colores.
 
 
 ////cambiar el fondo por ejmplo dependiendo del valor que ingrese el usuario
-inputColor.addEventListener('input', () =>{
+inputColor.addEventListener('input', () => {
     document.body.style.backgroundColor = inputColor.value
 })
 
 /////EVENTO CHANGE
 //se dispara cuando se detecta un cambio en el elemento. cuando de enter o salga del elemento, cuandop haya un cambio dentro del elemento
 
-input1.addEventListener('change', () =>{
+input1.addEventListener('change', () => {
     console.log(input1.value)
 })
 
@@ -866,8 +874,8 @@ input1.addEventListener('change', () =>{
     </form>
 en el html */
 
-class Persona{
-    constructor(nombre, apellido, edad){
+class Persona {
+    constructor(nombre, apellido, edad) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
@@ -879,12 +887,12 @@ let formPersona = document.getElementById('form')
 let botonPersonas = document.getElementById('botonPersonas')
 let divPersonas = Document.getElementById('divPersonas')
 
-formPersona.addEventListener('submit', (e) =>{
-    e.preventDefault()    /////como no tengo servidor uso preventDefault para resetear el comportamiento del evento por default.
+formPersona.addEventListener('submit', (e) => {
+    e.preventDefault() /////como no tengo servidor uso preventDefault para resetear el comportamiento del evento por default.
     let nombre = document.getElementById('idNombre').value
     let apellido = document.getElementById('idApellido').value
     let edad = document.getElementById('idEdad').value
-    
+
     const persona = new Persona(nombre, apellido, edad)
     arrayPersonas.push(persona)
     console.log(arrayPersonas)
@@ -893,7 +901,7 @@ formPersona.addEventListener('submit', (e) =>{
 
 botonPersonas.addEventListener('dbclick', () => {
     arrayPersonas.forEach((personaEnArray, indice) => {
-    divPersonas.innerHTML += `
+        divPersonas.innerHTML += `
     <div class="card" id="persona${indice}" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Persona N°: ${indice + 1}</h5> ///se le pone al indice +1 pq asi se muestra en el html posicion 1 y no 0.
@@ -922,7 +930,7 @@ botonPersonas.addEventListener('dbclick', () => {
 ///SessionStorage, voy a almacenar informacion mientras el usuario este en mi pagina.
 
 localStorage.setItem("SALUDO", "HOLA") ////inps elemento, aplicacion, localstorage,   clave-valor
-console.log(localStorage,getItem("saludo"))///en cambio de poner un valor que no existe, devuelve null.
+console.log(localStorage, getItem("saludo")) ///en cambio de poner un valor que no existe, devuelve null.
 
 sessionStorage.setItem("saludo", "hola")
 console.log(sessionStorage.getItem("saludo")) ///se elimina cada vez que el usuario cierre la pesta;a pagina navegador etc.
@@ -933,15 +941,15 @@ console.log(sessionStorage.getItem("saludo")) ///se elimina cada vez que el usua
 localStorage.setItem("despedida", "adios")
 localStorage.setItem("uno", 1)
 
-for(let i = 0; i <localStorage.length; i++){
-    let clave = localStorage.key(i)   ///consulto por cada una de las claves almacenadas
-    console.log(localStorage.getItem(clave))///
+for (let i = 0; i < localStorage.length; i++) {
+    let clave = localStorage.key(i) ///consulto por cada una de las claves almacenadas
+    console.log(localStorage.getItem(clave)) ///
 }
 
 ///para eliminar datos del storage
 localStorage.removeItem("uno")
 
-localStorage.clear()////esto elimina todo los datos del localStorage
+localStorage.clear() ////esto elimina todo los datos del localStorage
 
 
 
@@ -952,15 +960,18 @@ localStorage.clear()////esto elimina todo los datos del localStorage
 
 /////STRINGIFY, pasar un objeto a formato string.
 
-const objPersona = {nombre: "Francisco", apellido: "Pugh"}
+const objPersona = {
+    nombre: "Francisco",
+    apellido: "Pugh"
+}
 let personas = [objPersona]
 const personasArray = JSON.stringify(personas)
-localStorage.setItem("persona", personasArray)    // o tambien puedo hacer localStorage.setItem("persona", JSON.stringify(personas)) ///me ahorro la linea
+localStorage.setItem("persona", personasArray) // o tambien puedo hacer localStorage.setItem("persona", JSON.stringify(personas)) ///me ahorro la linea
 
 //los datos de los dos Storage no se puedne modificar de forma directa, si no que piso los valores
 
-class Persona{
-    constructor(persona, apellido, edad){
+class Persona {
+    constructor(persona, apellido, edad) {
         this.persona = persona;
         this.apellido = apellido;
         this.edad = edad
@@ -968,40 +979,40 @@ class Persona{
 }
 let personas
 
-if(localStorage.getItem("personas")){     ///aca digo, si existe mi localstore una clave con la palabra personas, la consulto.
-    personas = JSON.parse(localStorage.getItem("personas"))   ////como estan en formato jason hago el parseo, y tengo un array con datos de localStorage
-}else{
+if (localStorage.getItem("personas")) { ///aca digo, si existe mi localstore una clave con la palabra personas, la consulto.
+    personas = JSON.parse(localStorage.getItem("personas")) ////como estan en formato jason hago el parseo, y tengo un array con datos de localStorage
+} else {
     let personas = [] ////si en cambio no edxiste esa key localStorage, creo un array vacio y guardo
-    localStorage.setItem("Personas", JSON.stringify(personas))     ////ese array vacio en el localStorage
+    localStorage.setItem("Personas", JSON.stringify(personas)) ////ese array vacio en el localStorage
 }
 
 ///hago formulario en html con inputs.
 
-let formulario = document.getElementById("formUser")    ///cree un formulario, lo consulte por el ID
+let formulario = document.getElementById("formUser") ///cree un formulario, lo consulte por el ID
 let boton = document.getElementById("botonUsers")
 let div = document.getElementById(divUsers)
 
-formulario.addEventListener("submit", (e) => {       ////a ese formulario le agregue un evento de tipo submit
+formulario.addEventListener("submit", (e) => { ////a ese formulario le agregue un evento de tipo submit
     e.preventDefault()
-    let nombre = document.getElementById("name").value            /////para consultar el valor de tres inputs
+    let nombre = document.getElementById("name").value /////para consultar el valor de tres inputs
     let apellido = document.getElementById("apellido").value
     let edad = document.getElementById("edad").value
 
-    const persona = new Persona(nombre, apellido, edad)       ////con ese valor, esos tres inputs cree un nuevo objeto persona
-    personas.push(persona)   ///con ese nuevo objeto persona lo guarde en el array
+    const persona = new Persona(nombre, apellido, edad) ////con ese valor, esos tres inputs cree un nuevo objeto persona
+    personas.push(persona) ///con ese nuevo objeto persona lo guarde en el array
 
-    localStorage.setItem("personas", JSON.stringify(personas))    ////y ese array lo guardo en el localStorage
+    localStorage.setItem("personas", JSON.stringify(personas)) ////y ese array lo guardo en el localStorage
 
 })
 
 ////creo boton en html, para consultar los datos de localStorage
 
-boton,addEventListener("click", () => {
+boton, addEventListener("click", () => {
     let arrayStorage = JSON.parse(localStorage.getItem("Personas"))
-    div.innerHTML = ""  ////Esto para que el codigo no se repitiera varias veces. 
+    div.innerHTML = "" ////Esto para que el codigo no se repitiera varias veces. 
 
-    arrayStorage.forEach( (personaEnArray, indice) =>{
-                    div.innerHTML +=`aca va el card de bootstrap`
+    arrayStorage.forEach((personaEnArray, indice) => {
+        div.innerHTML += `aca va el card de bootstrap`
     })
     console.log(arrayStorage) ////esto para ver mis datos en la card de bootstrap en el DOM.
 })
@@ -1016,3 +1027,158 @@ basicamente consulto el localStorage asi no se van reseteando los valores.
 */
 //consulto los valores que existian dentro de local storage, si existia ese key la guardo en un array cada uno de los valores, si no exisitia creo esa key ocn el array vacio.
 ///creo el array vacio (personas = []) pq no estaba creado el array, no tengo ningun dato. 
+
+
+
+
+/////
+
+
+//CLASE 12
+//OPERADORES AVANZADOS-Sugar syntax
+//simplifican una tarea mas compleja
+
+let numeroo = 20
+
+if (numeroo == 20) {
+    console.log("Numero 20")
+} else {
+    console.log("numero no es 20")
+}
+
+(numeroo == 20) ?  console.log("Numero 20") : console.log("Numero no es 20")  ////el primer parentesis no es necesario, solo si se me complica ver el condicional
+
+//
+console.log(0 ?? "Nullish") ///el operador 0 en booleano retorna false, pero con nullish retorna 0.
+
+//
+
+function obtenerDatosStorage() {
+    const listado = JSON.parse(localStorage.getItem('Listado'))
+    return listado ?? []  ///retorname listado, y si listado es null, devoolveme un array vacio
+}
+
+let array = obtenerDatosStorage()
+
+////Acceso condicional a un objeto
+// si intento acceder a un objeto que no existe naturalmente obtengo un error, pero si uso el operador ? sobre la referencia de un objeto para condicionar su acceso puedo tener un mejor control de errores en la ejecucion
+const objeto = undefined
+ console.log( objeto?.nombre || "Propiedad no disponible") //agrego una condicon para evitar errores.  
+
+
+
+ ///desestructuracion de obj
+
+////declaro variables y en ellas almaceno los valores de las propiedades. Hago esto para trabajar con inmutabilidad, es decir utilizar esos valores sin riesgo de alterar las propiedades del objeto
+//sin embargo, puedo usar la desestruc para simplificar y agilizar este proceso. Es una tecnica que permite declarar variables donde guardar propiedades de un obj de forma rapida y directa.
+
+const pelsona = {
+    nombreCliente : "prez",
+    apellidoCliente : "Perez",
+    edadCliente : 35,
+    direccionCliente: {
+        c: "falsa"
+        n: 123
+    }
+
+}
+
+console.log(nombre) ///lo mismo con apellido edad
+///o mejor puedo usar esto
+
+let {nombre, apellido, edad} = pelsona ///noaltera al objeto, solo consulto las propiedades que necesito. Y las guardo en una variable
+
+//tambien lo puedo usar para acceder a obj con objetos dentro
+
+let {nombreCliente:nombre, apellidoCliente: apellido, edadCliente: edad, direccionCliente: direccion} = pelsona
+
+console.log(nombre)
+console.log(apellido)
+
+let {c: calle, n: numero} = direccion
+console.log(`${calle} ${numero}`)
+
+
+//desestructuracion en parametros.
+
+function desestructuracionObjeto (obj) {
+    let {nC: nombre, aC: apellido, dC: direccion} = obj
+    let {c: calle, n: numero} = direccion
+    console.log(`${nombre}, ${apellido}, ${calle}, ${numero}`)
+}
+
+desestructuracionObjeto(persona)
+
+function desestructuracionObjeto({nC: nombre, aC: apellido, dC: direccion}){
+    let let {c: calle, n: numero} = direccion
+    console.log(`${nombre}, ${apellido}, ${calle}, ${numero}`)
+}
+
+
+////Desestructuracion de ARRAY
+///puede desestructurar un objeto de un array atraves de sui posicion.
+
+const pelsona1 = {
+    nombreCliente : "wwprez",
+    apellidoCliente : "Perez",
+    edadCliente : 35,
+    direccionCliente: {
+        c: "falsa"
+        n: 123
+    }
+
+}
+
+const pelsona2 = {
+    nombreCliente : "asdprez",
+    apellidoCliente : "Perez",
+    edadCliente : 35,
+    direccionCliente: {
+        c: "falsa"
+        n: 123
+    }
+
+}
+
+let arrayPelsonas = [pelsona1, pelsona2]
+
+const [a,b] = arrayPelsonas
+
+console.log(a)
+console.log(b) 
+
+const [,b] = arrayPelsonas ///acceso a la segunda posicion, con el espacio vacio salto a para acceder a b
+
+
+////SPREAD
+///es una herramienta que me permite desparramar un array u objeto. En otras palabras, cambiar la forma en la que presento este array u obj
+
+console.log(...arrayPersonas)
+
+let arrayNumeros = [5,8,5,4,3,2,4,6,7,]
+console.log(math.max(...arrayNumeros))
+
+function retornarValor(...array){
+    console.log(array)
+}
+retornarValor(...arrayPelsonas)
+
+///por ejemplo si necesito saber cual es el menor o mayor de este array de numeros, con spread puedo solucionar esto ya que math.max() recibira cada elemento del array como un parametro indivual
+
+////SPREAD DE OBJETOS
+////yo puedo hacer copias de objetos dentro de otros objetos
+
+const persona5 = {   ///con el spread copio los datos de la persona4, mas los datos que yo agrego.
+    ...persona4,
+    dni: 123123,
+    estadoCivil: "soltero"
+}
+ console.log(persona5)
+
+ let numeros = [5,10,60,40]
+
+ const suma = (...numeros) => {
+     return numeros.reduce((acc, n) => acc + n, 0)
+ }
+
+ console.log(suma(5,10,60,50))
