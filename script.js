@@ -1046,16 +1046,16 @@ if (numeroo == 20) {
     console.log("numero no es 20")
 }
 
-(numeroo == 20) ?  console.log("Numero 20") : console.log("Numero no es 20")  ////el primer parentesis no es necesario, solo si se me complica ver el condicional
+(numeroo == 20) ? console.log("Numero 20"): console.log("Numero no es 20") ////el primer parentesis no es necesario, solo si se me complica ver el condicional
 
 //
-console.log(0 ?? "Nullish") ///el operador 0 en booleano retorna false, pero con nullish retorna 0.
+console.log(0 ? ? "Nullish") ///el operador 0 en booleano retorna false, pero con nullish retorna 0.
 
 //
 
 function obtenerDatosStorage() {
     const listado = JSON.parse(localStorage.getItem('Listado'))
-    return listado ?? []  ///retorname listado, y si listado es null, devoolveme un array vacio
+    return listado ? ? [] ///retorname listado, y si listado es null, devoolveme un array vacio
 }
 
 let array = obtenerDatosStorage()
@@ -1063,19 +1063,19 @@ let array = obtenerDatosStorage()
 ////Acceso condicional a un objeto
 // si intento acceder a un objeto que no existe naturalmente obtengo un error, pero si uso el operador ? sobre la referencia de un objeto para condicionar su acceso puedo tener un mejor control de errores en la ejecucion
 const objeto = undefined
- console.log( objeto?.nombre || "Propiedad no disponible") //agrego una condicon para evitar errores.  
+console.log(objeto ? .nombre || "Propiedad no disponible") //agrego una condicon para evitar errores.  
 
 
 
- ///desestructuracion de obj
+///desestructuracion de obj
 
 ////declaro variables y en ellas almaceno los valores de las propiedades. Hago esto para trabajar con inmutabilidad, es decir utilizar esos valores sin riesgo de alterar las propiedades del objeto
 //sin embargo, puedo usar la desestruc para simplificar y agilizar este proceso. Es una tecnica que permite declarar variables donde guardar propiedades de un obj de forma rapida y directa.
 
 const pelsona = {
-    nombreCliente : "prez",
-    apellidoCliente : "Perez",
-    edadCliente : 35,
+    nombreCliente: "prez",
+    apellidoCliente: "Perez",
+    edadCliente: 35,
     direccionCliente: {
         c: "falsa"
         n: 123
@@ -1086,31 +1086,58 @@ const pelsona = {
 console.log(nombre) ///lo mismo con apellido edad
 ///o mejor puedo usar esto
 
-let {nombre, apellido, edad} = pelsona ///noaltera al objeto, solo consulto las propiedades que necesito. Y las guardo en una variable
+let {
+    nombre,
+    apellido,
+    edad
+} = pelsona ///noaltera al objeto, solo consulto las propiedades que necesito. Y las guardo en una variable
 
 //tambien lo puedo usar para acceder a obj con objetos dentro
 
-let {nombreCliente:nombre, apellidoCliente: apellido, edadCliente: edad, direccionCliente: direccion} = pelsona
+let {
+    nombreCliente: nombre,
+    apellidoCliente: apellido,
+    edadCliente: edad,
+    direccionCliente: direccion
+} = pelsona
 
 console.log(nombre)
 console.log(apellido)
 
-let {c: calle, n: numero} = direccion
+let {
+    c: calle,
+    n: numero
+} = direccion
 console.log(`${calle} ${numero}`)
 
 
 //desestructuracion en parametros.
 
-function desestructuracionObjeto (obj) {
-    let {nC: nombre, aC: apellido, dC: direccion} = obj
-    let {c: calle, n: numero} = direccion
+function desestructuracionObjeto(obj) {
+    let {
+        nC: nombre,
+        aC: apellido,
+        dC: direccion
+    } = obj
+    let {
+        c: calle,
+        n: numero
+    } = direccion
     console.log(`${nombre}, ${apellido}, ${calle}, ${numero}`)
 }
 
 desestructuracionObjeto(persona)
 
-function desestructuracionObjeto({nC: nombre, aC: apellido, dC: direccion}){
-    let let {c: calle, n: numero} = direccion
+function desestructuracionObjeto({
+    nC: nombre,
+    aC: apellido,
+    dC: direccion
+}) {
+    let
+    let {
+        c: calle,
+        n: numero
+    } = direccion
     console.log(`${nombre}, ${apellido}, ${calle}, ${numero}`)
 }
 
@@ -1119,9 +1146,9 @@ function desestructuracionObjeto({nC: nombre, aC: apellido, dC: direccion}){
 ///puede desestructurar un objeto de un array atraves de sui posicion.
 
 const pelsona1 = {
-    nombreCliente : "wwprez",
-    apellidoCliente : "Perez",
-    edadCliente : 35,
+    nombreCliente: "wwprez",
+    apellidoCliente: "Perez",
+    edadCliente: 35,
     direccionCliente: {
         c: "falsa"
         n: 123
@@ -1130,9 +1157,9 @@ const pelsona1 = {
 }
 
 const pelsona2 = {
-    nombreCliente : "asdprez",
-    apellidoCliente : "Perez",
-    edadCliente : 35,
+    nombreCliente: "asdprez",
+    apellidoCliente: "Perez",
+    edadCliente: 35,
     direccionCliente: {
         c: "falsa"
         n: 123
@@ -1142,12 +1169,12 @@ const pelsona2 = {
 
 let arrayPelsonas = [pelsona1, pelsona2]
 
-const [a,b] = arrayPelsonas
+const [a, b] = arrayPelsonas
 
 console.log(a)
-console.log(b) 
+console.log(b)
 
-const [,b] = arrayPelsonas ///acceso a la segunda posicion, con el espacio vacio salto a para acceder a b
+const [, b] = arrayPelsonas ///acceso a la segunda posicion, con el espacio vacio salto a para acceder a b
 
 
 ////SPREAD
@@ -1155,10 +1182,10 @@ const [,b] = arrayPelsonas ///acceso a la segunda posicion, con el espacio vacio
 
 console.log(...arrayPersonas)
 
-let arrayNumeros = [5,8,5,4,3,2,4,6,7,]
+let arrayNumeros = [5, 8, 5, 4, 3, 2, 4, 6, 7, ]
 console.log(math.max(...arrayNumeros))
 
-function retornarValor(...array){
+function retornarValor(...array) {
     console.log(array)
 }
 retornarValor(...arrayPelsonas)
@@ -1168,17 +1195,255 @@ retornarValor(...arrayPelsonas)
 ////SPREAD DE OBJETOS
 ////yo puedo hacer copias de objetos dentro de otros objetos
 
-const persona5 = {   ///con el spread copio los datos de la persona4, mas los datos que yo agrego.
+const persona5 = { ///con el spread copio los datos de la persona4, mas los datos que yo agrego.
     ...persona4,
     dni: 123123,
     estadoCivil: "soltero"
 }
- console.log(persona5)
+console.log(persona5)
 
- let numeros = [5,10,60,40]
+let numeros = [5, 10, 60, 40]
 
- const suma = (...numeros) => {
-     return numeros.reduce((acc, n) => acc + n, 0)
- }
+const suma = (...numeros) => {
+    return numeros.reduce((acc, n) => acc + n, 0)
+    ``
+}
 
- console.log(suma(5,10,60,50))
+console.log(suma(5, 10, 60, 50))
+
+
+////
+
+///CLASE 13
+//LIBRERIAS
+
+//librerias : son codigos pre-escritos que facilitan el desarrollo de aplicaciones. 
+//usar trend builtwith 
+//https://trends.builtwith.com/javascript/javascript-library
+//https://2021.stateofjs.com/en-US/libraries/front-end-frameworks
+
+///implementacion
+///un ARCHIVO MINIFICADO son archivos JS cuyo contenido se encuentra escrito en una unica linea y de corrido, sin saltos de linea ni espacios innecesarios para achicarlos.
+
+
+///DOCUMENTACION
+//es el manual de instrucciones para la implementacion y manejo de las librerias. 
+
+//--------------------------------------
+
+
+
+
+
+///CLASE 14- PROMISES & ASYNC
+
+//sincronica, espero hasta que termina la linea anterior, y ahi me ejecuto(el codigo)
+//asyncronico, cargo datos en segundo plano, y mientras eso se cargo puedo seguir navegando.
+//la programacion asincronica permite que multiples tareas sucedan a la vez.All comenzar una accion,. nuestro programa sigue en ejecucion; y cuando la accion termina nuestro progrma es informado y consigue acceso al resultado correspondiente.
+
+//entonces, si deseio hacer dos peticiones
+//Modelo sincronico: la segunda peticion empezaria solamente cuando termine la primera, y tendria el resultado de ambas luego de finalizar la segunda.
+
+//modelo asincronico, ambas peticiones pueden realizarse en paralelo, y solo debemos sincronizar los resultados cuando terminen.
+//ventajas, facilita el manejo de programas que realizan mutiples acciones a la vez.
+//principales riesgos, puede dificultar la comprension de aquellos programas que tienden a seguir una unica linea de accion.
+
+
+
+//setTimeout: esta funcion que permite realizar acciones asincronicamente.La funcion recibe dos parametros:
+//una funcion de callback y un valor numerico que representa milisegundos. setTimeout(fn, time)
+
+//asi, la funcion que pasamos por primer parametro se ejecuta luego de que transcurra el tiempo definido en el segundo parametro.
+//Ejm: 
+setTimeout(() => {
+    console.log('proceso asincronico')
+}, 3000)
+//
+
+const brn = document.querySelector('#boton');
+const popup = document.querySelector('#popup-mensaje');
+
+btn.addEventListener('click', () => {
+    popup.classList.add('popup-active')
+
+    setTimeout(() => {
+        popup.classList.remove('popup-active')
+    }, 2500)
+});
+
+//lo visto anteriormente en los ejemplos no se explica precisamente con el tiempo de ejec del proceso, sino con el orden que ocupa en el listado de peticiones a ejecutar.
+
+/*CALL STACK(PILA): es una lista donde se apilan las distintas tareas a ejecutar por nuestro programa, Js es un lenguaje single threaded, o de un unico hilo,
+lo que significa que tiene un unico stack o pila de ejecucion. De ahi que la ejecucion es implicitamente asincronica.*/
+
+/*el proceso call stack: cuando se esta a punto de ejecutar
+una funcion, esta es a;adida al stack. Si la funcion llama a la vez, a otra funcion,
+esta es agregada sobre la anterior */
+
+//ejmp
+function multiply(x, y) {
+    return x * y;
+}
+
+function printSquare(x) {
+    let s = multiply(x, x);
+    console.log(s);
+}
+printSquare(5); //es una lista de tareas de js a ejecutar durante el programa. Cada nueva instruccion se agrega en el orden que corresponde al stack y el motor de js resuelve una a una.
+//basicamente, voy a ir acumulando cada uno de los procesos, y el ultimo que entro es el primero que sale.
+
+//EVENT LOOP
+//es la herramienta que permite la asincronizacion entre nuestro call stack con estas tareas asincronicas que funcionan en un thread aparte.
+
+//Si el stack esta vacio, el event loop envia la primera funcion que este en la callback queue al call stack y comienza a ejecutarse.
+//
+
+//setInterval: misma sintaxis que setTimeout, pero la unidad de tiempo es un intervalo ara la repeticion de la funcion asociada.
+setInterval(() => {
+    console.log('tic')
+}, 1000);
+//Permite ejecutar funciones de una manera reiterativa tras los milisegundos indicados hasta que indiquemos su detencion o se cierre la aplicacion.
+
+
+//clearInterval & clearTimeout
+/*Cuando llamamos un setInterval() esta retorna una referencia al intervalo generado, el cual
+podemos almacenar en una variable. Es esta referencia la que debemos pasar a la funcion clearInterval para que
+ la limpieza tenga efecto: */
+
+let counter = 0;
+const interval = setInterval(() => {
+    counter++
+    console.log('counter: ', counter);
+
+    if (counter >= 5) {
+        clearInterval(interval)
+        console.log('Se removio el intervalo')
+    }
+}, 1000);
+
+
+
+///PROMESAS.
+/*es un objeto de Js que representa un evento a futuro. Es una 
+accion asincronica que se puede completar en algun momento y producir
+un valor, y notificar cuando esto suceda. */
+//Una promesa representa un evento a futuro que se que se va a ejecutar.
+//Una promesa cuenta con tres estados posibles: pending, fulfilled y rejected. Las promesas pueden de ser resueltas o rechazadas.
+
+
+/*Puedo crear promesas a traves de su constructor new Promise.
+Su sintaxis es algo comleja, ya que recibe una funcion por parametro
+que a su vez recibe por parametro las funciones de resolve y reject
+ */
+
+
+
+/*en principio, una promesa se retorna con estado pending, 
+entendiendo que el valor a generar aunno fue resuelto*/
+
+const eventoFuturo = () => {
+    return new Promise((resolve, rejected) => {
+        //cuerpo de la promesa
+    })
+}
+console.log(eventoFuturo()) //Promise {<pending>}
+
+/*esta funcion retorna una promesa que no se resuelve. Por lo tanto, veremos que el valor que genera
+es un objeto Promise con estado pendiente*/
+
+
+/*El valor de retorno de la proimesa se define a traves del llamado a las funciones de resolve o reject:
++Si el cuerpo de la promesa llama a resolve(), la promesa cambiara su estado a 
+fulfilled, con el valor enviado a resolve().
++Si la promesa llama a reject(), cambiara su estado a rejected con el valor enviado al reject().
+*/
+
+//ejemplo::::::
+/*Aqui podemos ver como cambia de estado la promesa con distintos valores.
+Segun el llamado de la funcion de la promesa se vera resuelta o rechazada. Sin embargo, lo que
+vemos por consola es el objeto Promise que retorna la funcion, y con lo que nos interesa trabajar en realidad es con el valor de resolucion de la promesa*/
+
+const eventFuturo = (valor) => {
+    return new Promise((resolve, reject) => {
+        if (valor === true) {
+            resolve('promesa resuelta')
+        } else {
+            reject('promesa rechazada')
+        }
+    })
+}
+
+console.log(eventFuturo(true)) //promise {'promesa resuelta}
+console.log(eventFuturo(false)) //promise {<rejected> 'promesa rechazada'}
+
+/////----------------------------------
+
+
+const eventoFuturo2 = (valor) => {
+return new Promise((resolve, reject) => {
+    setTimeout(() => {
+        res ? resolve('Promesa resuelta') : reject('promesa rechazada')
+    }, 2000)
+})
+}
+
+console.log(eventoFuturo2(true))//promise(<pending>)
+
+//
+
+/*en este caso, el console.log es sincronico y vemos que la promesa es ten pending
+en ambos llamados(su resolucion se generara dentro de 2s). Las
+promesas tienen un mecanismo para trabajar esta asincronia y poder ejecutar fuinciones cuando 
+cambie su estado. */
+
+/*Al llamado de una funcion que retorne una promesa, podemos concatenar el metodo
+.then() o .catch(), los cuales reciben una fuincion por parametro con la cual se caputa el valor de la promesa.
+
++.then(): si la promesa es resuelta, su valor de retorno se captura dentro del then(),recibiendo
+por parametro de su funcion ese valor.
+
++.catch():si la promesa es rechazada, su valor se captura dentro de un .catch() siguiendo
+la misma logica */
+
+//lo que queramos ejecutar cuadno la promesa se resuelva o rechace, debemos definirlo dentro de un .then o .., segun el caso
+
+eventoFuturo(true)
+.then((response) => {
+    console.log(response) //promesa resuelta
+})
+
+eventoFuturo(false)
+.catch((error) => {
+    console.log(error) //promesa rechazada
+})
+
+/*
+se aprecian los console.log tras 2 segundos de delay y lo que vemos es, 
+precisamente, el valor que retornan el resolve o reject de la promesa.
+ */
+
+/*como una promesa puede tener varios estados posibles, se puede concatenar
+varios.then .catch en un mismo llamado, y caeremos en el caso que corresponda segun
+como se haya resuelto la promesa */
+
+eventoFuturo(true)
+.then((response) => {
+    console.log(response) //promesa resuelta
+})
+.catch( (error) => {
+    console.log(error)
+})
+
+eventoFuturo(false)
+.then( (response) => {
+    console.log(response)
+})
+.catch((error) => {
+    console.log(error) //promesa rechazada
+})
+
+/* esto quiere decir que, para cada promesa podemos definir una estructura para trabajar
+los distintos caso posibles. Cada promesa solo puede resolverse o
+rechazarse una unica vez. Es un mecanismo de control claro y ordenado para trabajar
+la asincronia y los posibles valores a recibir*/
+
