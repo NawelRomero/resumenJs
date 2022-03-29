@@ -325,7 +325,7 @@ switch (operador) {
 
 ///CLASE 4
 
-// FUNCIONES   DRY(codigo unico y reutilizable), KISS (mantenerlo simple y funcional) y YAGNI(no hagas lo que no te piden)
+// FUNCIONES  --- DRY(codigo unico y reutilizable), KISS (mantenerlo simple y funcional) y YAGNI(no hagas lo que no te piden)
 
 function saludar() {
     console.log("Hola coders")
@@ -1446,4 +1446,48 @@ eventoFuturo(false)
 los distintos caso posibles. Cada promesa solo puede resolverse o
 rechazarse una unica vez. Es un mecanismo de control claro y ordenado para trabajar
 la asincronia y los posibles valores a recibir*/
+
+//
+//---------------------------------------------------------------------------------------------
+
+
+
+//CLASE 15 AJAX & Fetch//
+
+/*AJAX(JavaScript Asincrono y XML), un conjunto de tecnicas de desarrollo que permiten que las app web funcionen de forma
+asincronica para procesar tareas en sengundo plano*/
+//Es la posibilad de poder acceder a informacion mediante forma asincronica. 
+
+/*Fetch es la forma actual en la que voy a implementar AJAX.*/
+
+//Modelo cliente-servidor.
+
+//peticiones http.
+
+/*El mecanismo por el cual se piden y proveen datos a traves de internet de HTTP 
+(hypertext transfer protocol).
+Cuando emitimos una orden al navegador, hace una peticion (o request) HTTP a algun servidor,
+Luego, la recibira, procesara y nos devolvera una repuesta con informacion que utilizaremos en la aplicacion*/
+/*estas peticions que debemos hacer estan definidas por varias partes:
++una URL o direccion
++Un metodo(GET, POST, PUT, DELETE)
++Headers
++body
++Parametros(Query Params o URL Params)
+ */
+
+/*FETCH:
+js nos ofrece el metodo FETCH para hacer peticiones http a algun servicio externo.
+Como estas peticiones son asincronicas, convenientemente el metodo fetch() trabaja con promesas.
+El metodo recibe un primer parametro que es la URL a la cual hacer la peticion, y un segundo parametro 
+opcional de configuracion.
+*/
+fetch(url, config);
+
+//ejmplo: 
+fetch('https://crptoya.com/api/dolar')
+    .then((promesa) => promesa.json())
+    .then(data => {
+        console.log(data)
+    })
 
